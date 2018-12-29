@@ -35,7 +35,9 @@ if (-e $prefsfile) {
 };
 
 read %settings from csv
+open P,"wget -O - -q 'https://raw.githubusercontent.com/bjohas/Zotero_scripted_install/master/Zotero_prefs.csv' |";
 ...
+close P;
 
 open F,">>$file";
 foreach (keys %settings) {
